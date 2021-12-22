@@ -10,6 +10,4 @@ const element = (
         <p class="greeting__text">I'm learning React</p>
     </div>
 )
-console.log(element);
-
 ReactDOM.render(element, rootElement)
