@@ -6,10 +6,10 @@ const UserInfo = ( props ) => {
     return (
         <div className="user-info">
             <Avatar
-                avatarUrl={props.avatarUrl}
+                avatarUrl={props.user.avatarUrl}
                 user={props.user}>
             </Avatar>
-            <div className="user-info__name">{ props.name}</div>
+            <div className="user-info__name">{props.user.name}</div>
         </div>
     );
 }
