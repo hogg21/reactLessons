@@ -2,16 +2,17 @@ import React from "react";
 import moment from 'moment'
 
 const Profile = userData => {
-    const dateOfBirth = moment(new Date(userData.birthDate)).format('DD MM YY');
+    const { firstName, lastName, birthDate, birthPlace } = userData;
+    const date = moment(new Date(birthDate)).format('DD MM YY')
     return (
-        <>
+        <div className="profile">
             <div className="profile__name">
-                {userData.firstName} {userData.lastName}
+                {firstName} {lastName}
             </div>
             <div className="profile__birth">
-                {`Was born ${dateOfBirth} in ${userData.birthPlace}`}
+                {`Was born ${date} in ${birthPlace}`}
             </div>
-        </>
+        </div>
     );
 }
 export default Profile;
