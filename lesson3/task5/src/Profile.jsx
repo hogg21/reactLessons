@@ -3,7 +3,7 @@ import moment from 'moment'
 
 const Profile = userData => {
     const { firstName, lastName, birthDate, birthPlace } = userData;
-    const date = moment(new Date(birthDate)).format('DD MM YY')
+    const date = moment(new Date(birthDate)).format('DD MMM YY')
     return (
         <div className="profile">
             <div className="profile__name">
