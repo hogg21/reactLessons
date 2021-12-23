@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Profile from './Profile.jsx';
 
-const rootElement = document.querySelector('#root');
 const userData = {
   firstName: 'James',
   lastName: 'Bond',
@@ -11,8 +10,10 @@ const userData = {
   birthPlace: 'London',
 };
 
-ReactDOM.render(<Profile
-  userData={userData}>
-  
-</Profile>, rootElement
+ReactDOM.render(
+  <Profile
+    userData={userData}>
+    
+  </Profile>,
+  document.getElementById('root')
 );
