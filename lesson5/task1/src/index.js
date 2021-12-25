@@ -1,7 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.scss';
-import Toggle from './Toggler.jsx'
+import Counter  from './GoodButton.jsx';
 
-
-ReactDOM.render(<Toggle></Toggle>, document.getElementById('root'));
+ReactDOM.render(<Counter></Counter>, document.getElementById('root'));
