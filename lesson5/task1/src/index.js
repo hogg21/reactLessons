@@ -1,6 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import './index.scss';
-import GoodButton from './GoodButton.jsx';
+import Toggle from './Toggler.jsx'
 
-ReactDOM.render(<GoodButton></GoodButton>, document.getElementById('root'));
+
+ReactDOM.render(<Toggle></Toggle>, document.getElementById('root'));
