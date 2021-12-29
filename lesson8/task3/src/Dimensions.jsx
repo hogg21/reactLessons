@@ -10,9 +10,6 @@ class Demonsions extends Component {
         const { innerWidth, innerHeight } = window;
         this.setDimensions(innerWidth, innerHeight)
     }
-    componentDidUpdate() {
-        this.setDimensions(innerWidth, innerHeight)
-    }
     componentWillUnmount() {
         window.removeEventListener('resize', this.onResize)
     }
@@ -25,7 +22,7 @@ class Demonsions extends Component {
             width,
             height
         })
-        document.title = `${innerWidth} x ${innerHeight}`
+        document.title = `${width} x ${height}`
     }
     render() {
         return (
