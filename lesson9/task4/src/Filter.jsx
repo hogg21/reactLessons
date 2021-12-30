@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react';
 
-const Filter = ({ filterText, count, onChange }) => {
-    return (
-        <div class="filter">
-            <span class="filter__count">{count}</span>
-            <input type="text" class="filter__input" value={filterText} onChange={onChange} />
-        </div>
-    );
-}
+const Filter = ({ filterText, count, onChange }) => (
+  <div className="filter">
+    <span className="filter__count">{count}</span>
+    <input type="text" className="filter__input" onChange={onChange} value={filterText} />
+  </div>
+);
+
 export default Filter;
