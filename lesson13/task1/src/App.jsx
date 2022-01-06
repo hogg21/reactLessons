@@ -1,24 +1,29 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Contacts from "./Contacts.jsx";
-import Home from "./Home.jsx";
-import PageNotFound from "./PageNotFound.jsx";
-import Products from "./Products.jsx";
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Contacts from './Contacts.jsx';
+import Products from './Products.jsx';
+import Home from './Home.jsx';
+import PageNotFound from './PageNotFound.jsx';
 
+const App = () => (
+  <div className="page">
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/products">
+          <Products />
+        </Route>
+        <Route path="/contacts">
+          <Contacts />
+        </Route>
+        <Route path="*">
+          <PageNotFound />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  </div>
+);
 
-
-const App = () => {
-    return (
-        <div className="page">
-            <BrowserRouter>
-                <Routes>
-                    <Route exact path="/" element={<Home></Home>}></Route>
-                    <Route path="/products" element={<Products></Products>}></Route>
-                    <Route path="/contacts" element={<Contacts></Contacts>}></Route>
-                    <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
-                </Routes>
-            </BrowserRouter>
-        </div>
-    )
-}
 export default App;
