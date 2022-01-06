@@ -23,4 +23,5 @@ const Products = ({ match }) => (
     </Switch>
   </div>
 );
+
 export default Products;
