@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Contacts from "./Contacts.jsx";
-import Home from './Home.jsx';
-import Products from './Products.jsx';
+import Home from "./Home.jsx";
 import PageNotFound from "./PageNotFound.jsx";
+import Products from "./Products.jsx";
+
+
 
 const App = () => {
     return (
