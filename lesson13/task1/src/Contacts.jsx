@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Products = () => (
+const Contacts = () => (
   <div className="page__content">
     <h1>Contacts</h1>
     <p>We are here 🗺</p>
@@ -9,4 +9,4 @@ const Products = () => (
   </div>
 );
 
-export default Products;
+export default Contacts;
