@@ -1,30 +1,23 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from "./Home.jsx";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Contacts from "./Contacts.jsx";
-import Products from "./Products.jsx";
+import Home from "./Home.jsx";
 import PageNotFound from "./PageNotFound.jsx";
+import Products from "./Products.jsx";
 
 const App = () => {
-    return (
-        <div className="page">
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/">
-                        <Home></Home>
-                    </Route>
-                    <Route path="/contacts">
-                        <Contacts></Contacts>
-                    </Route>
-                    <Route path="/products">
-                        <Products></Products>
-                    </Route>
-                    <Route path="*">
-                        <PageNotFound></PageNotFound>
-                    </Route>
-                </Switch>
-            </BrowserRouter>
-        </div>
-    )
-}
+  return (
+    <div className="page">
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/"><Home /></Route>
+          <Route path="/products"><Products /></Route>
+          <Route path="/contacts"><Contacts /></Route>
+          <Route path="/*"><PageNotFound /></Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+};
+
 export default App;

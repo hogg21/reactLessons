@@ -2,23 +2,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
-const path = require('path');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   const config = {
-    mode: 'development',
-    entry: {
-      main: path.resolve(__dirname, './src/index.js'),
-    },
+    entry: './src/index.jsx',
     output: {
-      path: path.resolve(__dirname, './dist'),
       filename: 'bundle.js',
     },
     module: {
       rules: [
         {
-          test: /.\.js$|jsx/,
+          test: /.(js|jsx?)$/,
+          exclude: /node_modules/,
           use: ['babel-loader'],
         },
         {
@@ -31,6 +27,9 @@ module.exports = (env, argv) => {
         },
       ],
     },
+    resolve: {
+      extensions: ['.js', '.jsx'],
+    },
     plugins: [
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
@@ -39,10 +38,16 @@ module.exports = (env, argv) => {
       }),
     ],
     devServer: {
+      historyApiFallback: true,
+      open: true,
       hot: true,
-      historyApiFallback: true
+      port: 8080,
     },
   };
+
+  if (isProduction) {
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+  }
 
   if (isProduction) {
     config.plugins.push(
